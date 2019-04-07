@@ -2,8 +2,10 @@
 
 set -e
 
-sh /secrets/bootstrap.sh &
-sleep 3
+if [ -e /secrets/bootstrap.sh ]; then
+    sh /secrets/bootstrap.sh &
+    sleep 3
+fi
 
 if [ "$1" = jetty.sh ]; then
 	if ! command -v bash >/dev/null 2>&1 ; then
