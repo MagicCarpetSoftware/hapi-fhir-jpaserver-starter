@@ -7,6 +7,8 @@ if [ -e /secrets/bootstrap.sh ]; then
     sleep 3
 fi
 
+python /properties-render.py /var/lib/jetty/webapps/root/WEB-INF/classes/hapi.properties
+
 if [ "$1" = jetty.sh ]; then
 	if ! command -v bash >/dev/null 2>&1 ; then
 		cat >&2 <<- 'EOWARN'
