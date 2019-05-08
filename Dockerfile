@@ -1,4 +1,4 @@
-FROM jetty:9-jre8-alpine
+FROM jetty:9.4.12-jre8-alpine
 USER root:root
 RUN apk add --update openssl python py-pip && rm -rf /var/cache/apk/*
 RUN pip install jproperties
